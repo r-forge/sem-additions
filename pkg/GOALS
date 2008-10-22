@@ -1,0 +1,12 @@
+0.1 - A working version with some documentation
+0.2 - A working version, tried and tested, with fully fleshed out documentation
+
+
+1.0 - Code would include:
+	Model manipulation routines
+	SB Chisq, SB Mean Chi Square, YB Chi Square, BCC, ECVI, and more
+	SB Robust Standard Errors and Sandwich Standard Errors
+	SB ANOVA
+	Multigroup Analysis
+	Graphical Interface for Model Specification
+	Retrospective power analysis

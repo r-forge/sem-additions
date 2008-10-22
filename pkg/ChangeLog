@@ -1,0 +1,9 @@
+2008-09-02 JEB
+	- Error in delta_matrix fixed.  Delta matrix now largely squares with STATA output from Stas Kolenikov
+	- Added the Chi Square Difference test
+
+2008-08-24 JEB
+	 - Multiple bugfixes squaring new adjchisq object with older sbchisq object.
+
+2008-08-18 JEB
+	 - First version of package compiled and send out.

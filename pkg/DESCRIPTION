@@ -1,0 +1,10 @@
+Package: sem.additions
+Version: 0.1-03
+Date: 2008-0902
+Title: Additional Methods for Structural Equation Modelling
+Author: Jarrett Byrnes <byrnes@msi.ucsb.edu>
+Maintainer: Jarrett Byrnes <byrnes@msi.ucsb.edu>
+Depends: R(>= 2.7), sem, mvnormtest, sna
+Description: A series of methods for easier manipulation of RAM model objects, graphing tools for sem objects, and a variety of fit indices and corrections for non-normality.  
+License: GPL-3
+URL: http://convoluta.ucdavis.edu/research/sem-additions

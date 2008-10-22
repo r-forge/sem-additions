@@ -1,0 +1,17 @@
+Dear Andrea,
+I think the model fit retrospective power analysis with the Satorra and Saris (1985) can be implemented in LISREL as follows:
+    i) Specify an alternative model, say Ma, which represents a plausible theoretical alternative to your target model Mt.
+    ii) Run LISREL for Mt with the real data covariance matrix.
+    iii) Obtain the implied covariance matrix, say Mt.SIG, and the chi square value, say Ft.
+    iv) Rerun LISREL for Ma with covariance Matrix equal to Mt.SIG.
+    v) Obtain the chi square value Fa and the number of degrees of freedom DFa.
+    vi) Calculate the chi square difference between Fa and Ft, say deltaF. This difference estimates the noncentrality     parameter (ncp).
+    vii) Consult a table of noncentral chi-square to obtain estimated power for the ncp with DFa degrees of freedom.
+Best Regards.
+Haykel Demnati
+
+References
+*    Satorra, A., and Saris, W. E. (1985). "Power of the likelihood ratio test in covariance structure analysis". Psychometrika, 50, 83-90.
+
+
+#---
