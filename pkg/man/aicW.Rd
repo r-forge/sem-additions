@@ -4,7 +4,7 @@
 \description{Calculates the information criterion weight table for a number of models}
 \usage{aicW(a.list, func=aicc)}
 
-\argument{
+\arguments{
 	\item{a.list}{a list of objects which can have information criterion values returned}
 	\item{func}{a function for generating information criterion values.  Defaults to \code{\link{aicc}}, the small sample corrected Akaike's Information Criterion.}
 }

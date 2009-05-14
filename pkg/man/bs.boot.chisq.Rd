@@ -6,8 +6,7 @@
 \title{Bollen-Stine Bootstrap}
 \description{ Methods to generate and handle the Bollen-Stine Bootstrap. }
 
-\usage{bs.boot.chisq(model, model.data.frame, R=2000, maxiter=500, steptol=1e
--06, t=10, ...)
+\usage{bs.boot.chisq(model, model.data.frame, R=2000, maxiter=500, steptol=1e-06, t=10, ...)
 
 \method{summary}{bsboot}(object)
 

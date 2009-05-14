@@ -19,7 +19,7 @@
 
 \examples{ 
 
-    ## Same model as in \code{\link{specify.model}}.
+    ## Same model as in \link{specify.model}.
     ## broken into two pieces
 
 model.dhp.paths <- specify.model()
@@ -38,7 +38,7 @@ model.dhp.paths <- specify.model()
     FGenAsp  -> FOccAsp,  NA,     1
     FGenAsp  -> FEdAsp,  lam42,  NA
 
-model.dhp.error<-add.to.model(model.dhp)
+model.dhp.error<-add.to.model(model.dhp.paths)
     RGenAsp <-> RGenAsp, ps11,   NA
     FGenAsp <-> FGenAsp, ps22,   NA
     RGenAsp <-> FGenAsp, ps12,   NA

@@ -64,7 +64,7 @@ sem.wh.1 <- sem(model.wh.1, S.wh, 932)
 
 
 #now make wh2 without re-entering the whole thing
-model.wh.2<-delete.model.element("Alienation71   ->  Powerless71", model.wh.2, sort.by="path")
+model.wh.2<-delete.model.element("Alienation71   ->  Powerless71", model.wh.1, sort.by="path")
 
 model.wh.2<-delete.model.element("Alienation67   ->  Powerless67", model.wh.2, sort.by="path")
 

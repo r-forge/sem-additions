@@ -19,11 +19,13 @@ I would like it to also contain the following
 	Graphical Interface for Model Specification
 	Retrospective power analysis
 	
-	Check out what is here, and if you have code contributions, please contact me at \link{byrnes@msi.ucsb.edu}
+	Check out what is here, and if you have code contributions, please contact me at \email{byrnes@msi.ucsb.edu}
 }
 
 \seealso{
   \code{\link{sem}}.
 }
+
+\author{Jarrett Byrnes}\email{byrnes@msi.ucsb.edu}
 
 

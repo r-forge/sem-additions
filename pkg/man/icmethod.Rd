@@ -11,8 +11,8 @@ aicc(object)
 bic(object)
 }
 
-\argument{
-	\item{object}{An object of class \code{\link{sem}}, \code{\linkadjchisq}, or \code{\link{basboot}}}
+\arguments{
+	\item{object}{An object of class \code{\link{sem}}, \code{\linkadjchisq}, or \code{\link{bsboot}}}
 }
 
 \details{Calculates information criterion values for structural equation models.  Methods will also handle alternate objects that contain chi squared indexes for structural equation models.  The formulas for each are as follows, with X as the chi squared value, df as the model degrees of freedom, t is the number of free parameters, and N is the sample size:
@@ -33,6 +33,6 @@ Bazdogan's Consistent Akaike Information Criterion (CAIC) = \eqn{X - df*log(1+N}
 	\code{\link{sbchisq}}
 	\code{\link{adjchisq}}
 	\code{\link{bsboot}}
-	\code{\link{aicw}}
+	\code{\link{aicW}}
 }
 

@@ -3,12 +3,12 @@
 \title{Robust Summary}
 \description{ I needed to write more code to make working with sem easier. }
 
-\usage{robust_summary(sem.obj, adj.obj=NA, data.obj=NA)}
+\usage{robust_summary(sem.obj, adj.obj=NA, data.obj=NA, useFit = F)}
 \arguments{
  \item{sem.obj}{A fitted \code{\link{sem}} object.}
   \item{adj.obj}{An \code{\link{adjchisq}} adjusted chi squared object fit using \code{\link{sbchisq}}, or, NA if you wish to have the Satorra-Bentler Chi Squared value calculated}
   \item{data.obj}{If no adjusted chi squared object is provided, a data from from which to calculate the Satorra-Bentler Chi Squared index and its associated matrices.}
-    \item{useFit}{Use the observed or fitted covariance matrix for calculation of the maximum liklihood weight matrix.  Defaults to False.}
+  \item{useFit}{Use the observed or fitted covariance matrix for calculation of the maximum liklihood weight matrix.  Defaults to False.}
 
   }
 

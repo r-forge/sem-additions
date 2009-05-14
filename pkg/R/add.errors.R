@@ -8,7 +8,7 @@
 
 
 #takes a RAM model, and spits back all of the variables that don't already have an error term
-get.vars.that.need.error<-function(model, add.exo=F){
+get.vars.that.need.error<-function(model, add.exo=FALSE){
 	
     ##First, find out what variables need an error term
 	variables<-list()
@@ -53,7 +53,7 @@ get.vars.that.need.error<-function(model, add.exo=F){
 ##
 #fills in errors, so you don't have to type all of them
 ##
-add.errors<-function(model, add.exo=F){
+add.errors<-function(model, add.exo=FALSE){
 
    #figure out what variables need error paths
    variables<-get.vars.that.need.error(model, add.exo=add.exo)

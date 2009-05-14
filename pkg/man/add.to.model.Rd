@@ -20,7 +20,7 @@
 
 \examples{ 
 
-    ## Same model as in \code{\link{specify.model}}.
+    ## Same model as in \link{specify.model}.
     ## broken into two pieces
 
 model.dhp <- specify.model()
