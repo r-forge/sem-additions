@@ -6,7 +6,7 @@ browneChisq<-function(sem.obj, sem.data, ...){
 	s<-vech(sem.obj$S)
 	sigma<-vech(sem.obj$C)
 	
-	adj.obj$res_u<- iw_adf - (iw_adf%*%p_deriv_mat %*% ginv(t(p_deriv_mat) %*% iw_adf %*% p_deriv_mat) %*% t(p_deriv_mat) %*% iw_adf)
+	adj.obj$res_u<- iw_adf - (iw_adf%*%p_deriv_mat %*% solve(t(p_deriv_mat) %*% iw_adf %*% p_deriv_mat) %*% t(p_deriv_mat) %*% iw_adf)
 
 	adj.obj$c<-NA
 	adj.obj$chisq.scaled<- adj.obj$N * t(s-sigma) %*% adj.obj$res_u %*% (s-sigma)

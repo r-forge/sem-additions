@@ -18,7 +18,7 @@ robust_se<-function(sem.obj, adj.obj=NA, data.obj=NA, useFit=F){
 	
 	#calculate the hessian
 	hes<-sem_hessian(adj.obj$w_mat, adj.obj$p_deriv_mat)
-	info_m<-ginv(hes)
+	info_m<-solve(hes)
 	
 	acov<- info_m %*% ( t(adj.obj$p_deriv_mat) %*% adj.obj$w_mat %*% adj.obj$w_adf %*% adj.obj$w_mat %*% adj.obj$p_deriv_mat) %*% info_m
 	

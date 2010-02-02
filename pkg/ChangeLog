@@ -1,3 +1,6 @@
+2009-12-29 JEB
+	- fixed a mistaken generalized inverse in SB chisq
+	- fixed robust_summary to accomodate fixed parameters
 2009-05-12 JEB
 	- Multiple fixes to Rd files.
 	- Added rmsea power test by Joerg Evermann

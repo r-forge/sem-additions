@@ -20,7 +20,7 @@ sbchisq<-function(sem.obj, sem.data, adj=1e-04, useFit=F){
 	p_deriv_mat<- delta_matrix(sem.obj)
 	
 	#calculate the LS residual weight matrix
-	res_u<- w_mat - (w_mat%*%p_deriv_mat %*% ginv(t(p_deriv_mat) %*% w_mat %*% p_deriv_mat) %*% t(p_deriv_mat) %*% w_mat)
+	res_u<- w_mat - (w_mat%*%p_deriv_mat %*% solve(t(p_deriv_mat) %*% w_mat %*% p_deriv_mat) %*% t(p_deriv_mat) %*% w_mat)
 
 	#compute scaling statistic
 	ug<-res_u %*% w_adf
