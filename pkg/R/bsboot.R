@@ -98,7 +98,7 @@ bs.boot.chisq<-function(model, model.data.frame, R=2000, maxiter=500, steptol=1e
 	
 summary.bsboot<-function(object){
 	mean.chisq<-mean(object$chisq.vec, na.rm=T)
-	se.chisq<-se(object$chisq.vec)
+	se.chisq<-sd(object$chisq.vec, na.rm=T)/sqrt(length(na.omit(object$chisq.vec)))
 	var.chisq<-var(object$chisq.vec, na.rm=T)
 	p<-1-pchisq(mean.chisq, object$df)
 	ret.mat<-matrix(c(mean.chisq, var.chisq, se.chisq, object$R, object$df, p), nrow=1)

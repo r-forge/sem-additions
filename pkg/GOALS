@@ -3,10 +3,12 @@
 
 
 1.0 - Code would include:
-	Model manipulation routines
-	SB Chisq, SB Mean Chi Square, YB Chi Square, BCC, ECVI, and more
-	SB Robust Standard Errors and Sandwich Standard Errors
-	SB ANOVA
-	Multigroup Analysis
+	Model manipulation routines - done
+	SB Chisq, SB Mean Chi Square - done
+	YB Chi Square, BCC, ECVI, and more - many done
+	SB Robust Standard Errors - done 
+	Sandwich Standard Errors
+	SB ANOVA - done
+	Multigroup Analysis - done for equal sample size, but not yet included
 	Graphical Interface for Model Specification
 	Retrospective power analysis

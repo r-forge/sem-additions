@@ -1,6 +1,8 @@
 
 #calculate ADF weight matrix from raw data
 #this is actually waaaay faster, and produces correct output.  The Bentler adapted code was giving me the wrong matrix for some reason...
+#last updated 4/20/10
+
 adf.wmat<-function(raw_data){
 	n<-length(raw_data[,1])	
 	n.col<-length(names(raw_data))
@@ -22,7 +24,7 @@ adf.wmat<-function(raw_data){
 				
 		sc[[a.name]]<-z[,i]*z[,j]
 	}
-	adf_mat<-var(data.frame(sc))
+	adf_mat<-var(data.frame(sc))* (n-1)/n #to correct for n-1
 	return(adf_mat)
 }
 

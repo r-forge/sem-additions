@@ -26,13 +26,14 @@ ident.mat<-function(n){
 
 #vech, as the ks vech borks on certain valid matrices due to type issues
 # code based on ks library
-vech<-function (x) 
-{
-    d <- ncol(x)
-    vechx <- vector()
-    for (j in 1:d) vechx <- c(vechx, x[j:d, j])
-    return(vechx)
-}
+#now using matrixcalc code
+#vech<-function (x) 
+#{
+#    d <- ncol(x)
+#    vechx <- vector()
+#    for (j in 1:d) vechx <- c(vechx, x[j:d, j])
+#    return(vechx)
+#}
 
 #invvech, so as to remove dependency on ks - code based on ks library
 invvech<-function (x) 
@@ -45,15 +46,16 @@ invvech<-function (x)
     return(invvechx)
 }
 
-vec<-function (x, byrow = FALSE) 
-{
-    if (byrow) 
-        x <- t(x)
-    d <- ncol(x)
-    vecx <- vector()
-    for (j in 1:d) vecx <- c(vecx, x[, j])
-    return(vecx)
-}
+#now using code from matrixcalc
+#vec<-function (x, byrow = FALSE) 
+#{
+#    if (byrow) 
+#        x <- t(x)
+#    d <- ncol(x)
+#    vecx <- vector()
+#    for (j in 1:d) vecx <- c(vecx, x[, j])
+#    return(vecx)
+#}
 
 
 #gets names of each row_col of a matrix

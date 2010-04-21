@@ -12,7 +12,8 @@ bic(object)
 }
 
 \arguments{
-	\item{object}{An object of class \code{\link{sem}}, \code{\linkadjchisq}, or \code{\link{bsboot}}}
+	\item{object}{An object of class \code{\link{sem}}, \code{\link{adjchisq}}, or \code{\link{bsboot}}
+}
 }
 
 \details{Calculates information criterion values for structural equation models.  Methods will also handle alternate objects that contain chi squared indexes for structural equation models.  The formulas for each are as follows, with X as the chi squared value, df as the model degrees of freedom, t is the number of free parameters, and N is the sample size:

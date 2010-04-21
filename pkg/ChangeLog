@@ -1,9 +1,23 @@
+2010-04-20 JEB
+	- added anova.adjchisq which uses the SB corrected ANOVA for nested model comparison
+	- now correct the forth moment by n instead of n-1 (suggestion from Yves Rosseel)
+	- fixed delta_matrix bug of not adjusting for correlated disturbance on both parts of P matrix 
+	-added update.mod as a general way to update a ram object
+	-added methods to deal with lavaan models (sets of formulas)	
+
+2010-02-09 JEB
+	- now using matrixcalc for creating of duplication matrix
+	- fixed bug in p_deriv_mat, no longer including fixed params
+	  in calculation of delta matrix
+
 2009-12-29 JEB
 	- fixed a mistaken generalized inverse in SB chisq
 	- fixed robust_summary to accomodate fixed parameters
+
 2009-05-12 JEB
 	- Multiple fixes to Rd files.
 	- Added rmsea power test by Joerg Evermann
+
 2008-09-02 JEB
 	- Error in delta_matrix fixed.  Delta matrix now largely squares with STATA output from Stas Kolenikov
 	- Added the Chi Square Difference test

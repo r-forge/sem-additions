@@ -1,10 +1,10 @@
 Package: sem.additions
-Version: 0.1-05
-Date: 2009-1229
+Version: 0.1-10
+Date: 2010-04-20
 Title: Additional Methods for Structural Equation Modelling
 Author: Jarrett Byrnes <byrnes@msi.ucsb.edu>
 Maintainer: Jarrett Byrnes <byrnes@msi.ucsb.edu>
-Depends: R(>= 2.7), sem, mvnormtest, sna, boot
+Depends: R(>= 2.8), sem, mvnormtest, sna, boot, matrixcalc, MASS, igraph
 Description: A series of methods for easier manipulation of RAM model objects, graphing tools for sem objects, and a variety of fit indices and corrections for non-normality.  
 License: GPL-3
 URL: https://r-forge.r-project.org/projects/sem-additions/

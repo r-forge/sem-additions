@@ -1,3 +1,5 @@
+#last updated 4/20/2010
+
 browneChisq<-function(sem.obj, sem.data, ...){
 	adj.obj<-sbchisq(sem.obj, sem.data, ...)
 	adj.obj$w_mat<-NA

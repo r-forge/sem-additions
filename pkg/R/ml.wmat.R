@@ -14,7 +14,7 @@ ml.wmat<-function(sem.obj, useFit=F){
 	if(useFit){An<-sem.obj$C} else {An<-sem.obj$S}
 	Dp<-Ktrans(p)
 	An.inv<-solve(An)
-	w_mat<-2^-1 * t(Dp) %*% kronecker(An.inv, An.inv) %*% Dp
+	w_mat<-0.5 * t(Dp) %*% kronecker(An.inv, An.inv) %*% Dp
 	rownames(w_mat)<-vech(matrix.names(sem.obj$C))
 	colnames(w_mat)<-rownames(w_mat)
 	return(w_mat)

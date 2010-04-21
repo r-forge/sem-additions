@@ -5,7 +5,11 @@
 \title{Adjusted Chi Squared Tests for Structural Equation Models}
 \description{ Adjusted Chi Squared Tests for Structural Equation Models }
 
-\usage{summary.adjchisq(adj.obj)}{print.adjchisq(adj.obj)}
+\usage{summary.adjchisq(adj.obj)
+
+ \method{print}{adjchisq}(adj.obj)
+}
+
 \arguments{
   \item{adj.obj}{An adjusted Chi Squre object from one of the several methods meant to deal with structural equations models with non-normal data.}
 }

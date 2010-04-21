@@ -26,6 +26,6 @@ I would like it to also contain the following
   \code{\link{sem}}.
 }
 
-\author{Jarrett Byrnes}\email{byrnes@msi.ucsb.edu}
+\author{Jarrett Byrnes \email{byrnes@msi.ucsb.edu}}
 
 

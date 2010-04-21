@@ -3,7 +3,7 @@
 \title{Satorra-Bentler Mean Chi Square}
 \description{ I needed to write more code to make working with sem easier. }
 
-\usage{sbMeanChisq(sem.obj, sem.data, ...}
+\usage{sbMeanChisq(sem.obj, sem.data, ...)}
 \arguments{
   \item{sem.obj}{A fitted \code{\link{sem}}. object}
   \item{sem.data}{A data frame of variables used to generate the covariance matrix used in fitting the \code{\link{sem}}. object.}

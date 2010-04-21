@@ -13,18 +13,7 @@
 \details{Calculates the chi square difference between these two models using the methods of Satorra and Bentler(2001).  We use the output of corrected test statistics as \code{\link{adjchisq}} objects contain all of the metrics necessary for the test.
 
 One could code up something that takes an sem object, an altered RAM model, and a data frame - but really, why bother, as you'll probably want output from all of the intervening steps.
-
-The corrected chi square difference test is calculated as follows - As one model is nested within the other, let's call m0 the nested model and m1 the more general model.  DF = df0 - df1.  
-
-To calculate the chi square difference between these two models, we need to look at the correction factors - c0 and c1 - and calculate a correction factor for the test itself, cd.
-
-\deqn{cd = (df0* chisq0 - df1 * chisq1)/(df0 - df1)}
-
-where chisq is the uncorrected chi square value for each model.  The Chi Square statistic, TRd, is then defined as follows:
-
-\deqn{TRd = (chisq0 - chisq1)/cd}
-
-If the result is significant, the more complex model is favored.  If not, the two are equivalent in fit.
+Note: this is deprecated and one should use anova.adjchisq
 }
 
 

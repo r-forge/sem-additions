@@ -6,8 +6,7 @@
 \description{ A function for plotting fitted structural equation models }
 
 \usage{
-plot.sem(sem.object,  add.error=F, sig.col="black", ns.
-col="darkgrey",  ...)
+plot.sem(sem.object, add.error=F, sig.col="black", ns.col="darkgrey",  ...)
 
 plot.ram(ram.object, ...)
 }

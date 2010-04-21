@@ -1,11 +1,12 @@
-robust_summary<-function (sem.obj, adj.obj = NA, data.obj = NA, useFit = F) 
+#last updated 4/20/2010
+robust_summary<-function (sem.obj, adj.obj = NA, data.obj = NA, useFit = F, useGinv=F) 
 {
     if (is.na(adj.obj[1]) && is.na(data.obj)) 
         stop("Need a data or adjchisq object")
     if (is.na(adj.obj[1])) {
-        adj.obj <- sbchisq(sem.obj, data.obj, useFit = useFit)
+        adj.obj <- sbchisq(sem.obj, data.obj, useFit = useFit, useGinv= useGinv)
     }
-    ses <- robust_se(sem.obj, adj.obj = adj.obj)
+    ses <- robust_se(sem.obj, adj.obj = adj.obj, useGinv=adj.obj$ginvFlag)
     se <- rep(NA, length(ses))
 	index<-0
 	for (i in 1:length(sem.obj$ram[, 1])) {
@@ -27,18 +28,3 @@ robust_summary<-function (sem.obj, adj.obj = NA, data.obj = NA, useFit = F)
     print(coef.mat)
 }
 
-add.paths<-function(from, to, values=rep(NA, length(from)*length(to))){
-	newram<-matrix(rep(NA, 3*length(from)*length(to)), ncol=3)
-	par.index<-0
-	for (i in 1:length(to)){
-	  for (j in 1:length(from)){
-		par.index<-par.index+1
-		newram[par.index,1]<-paste(from[j], "->", to[i], sep="")
-		newram[par.index,2]<-paste(from[j], ".", to[i], sep="")
-		newram[par.index,3]<-values[par.index]
-		}
-	}
-	
-	class(newram)<-"mod"
-	return(newram)
-}

@@ -23,7 +23,8 @@
 
 \value{ An object of class \code{\link{adjchisq}}.}
 
-\author{Jarrett Byrnes}\email{byrnes@msi.ucsb.edu}
+\author{Jarrett Byrnes \email{byrnes@msi.ucsb.edu}}
+
 
 \seealso{
 	\code{\link{adf.wmat}}.
