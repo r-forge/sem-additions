@@ -115,27 +115,52 @@ model.to.ram<-function(a.model){
     pathType<-"->"
     if(op=="~~") pathType <-"<->"
     a.formula<-clean.modline(a.model[i])
-    y<-response(a.formula)
-    x<-strip.white(strsplit(predictors(a.formula), "+", fixed=T)[[1]])
-  
-    #iterate over each predictor variable
-    for(j in 1:length(x)){
-    	#construct a new path
-    	path<-paste(x[j], y, sep=pathType)
 
-    	#see if this is a fixed parameter values
-    	isFixed<-strsplit(x[j], '*', fixed=T)[[1]]
-    	if(length(isFixed)>1) {
-    	  coef<-NA
-    	  startValue<-isFixed[1]
-    	 #otherwise....
-    	 }else{
-    	  #create a new coefficient name
-    	  coef<-paste(x[j], y, sep=".")
-    	  if(pathType=="<->") coef<-paste(coef, "cov", sep=".")
-    	  startValue<-NA
+	#is this a latent or observed variable?
+    if(op=="=~"){
+    		x<-response(a.formula)
+    		y<-strip.white(strsplit(predictors(a.formula), "+", fixed=T)[[1]])
+    		ram<-rbind(ram, c( paste(x,"<->",x, sep=""),  paste(x,"error", sep="."), NA))
+    	}else{
+    		y<-response(a.formula)
+    		x<-strip.white(strsplit(predictors(a.formula), "+", fixed=T)[[1]])
+    		}
+  
+    #iterate over each response, in case this is a latent variable
+    for (q in 1:length(y)){
+     #iterate over each predictor variable
+     for(j in 1:length(x)){
+     	#see if this is a fixed parameter values
+    	     if(op=="=~"){
+ 		   isFixed<-strsplit(y[q], '*', fixed=T)[[1]]
+		   if(length(isFixed)>1) y[q]<-isFixed[2]
+		 }else{
+			isFixed<-strsplit(x[j], '*', fixed=T)[[1]]
+			if(length(isFixed)>1) x[j]<-isFixed[2]
+			}
+     	
+     	
+     	#construct a new path
+     	path<-paste(x[j], y[q], sep=pathType)
+
+
+
+    	 if(length(isFixed)>1) {
+    	   coef<-NA
+    	   startValue<-isFixed[1]
+    	  #otherwise....
+    	  }else{
+    	   #create a new coefficient name
+    	   coef<-paste(x[j], y[q], sep=".")
+    	   if(pathType=="<->") {
+    	   	ifelse((x[j]==y[q]),
+    	   		coef<-paste(coef, "var", sep="."), 
+    	   		coef<-paste(coef, "cov", sep="."))
+    	   	}
+    	   startValue<-NA
+    	  }
+    	 ram<-rbind(ram, c(path, coef, startValue))
     	 }
-    	ram<-rbind(ram, c(path, coef, startValue))
     	}
    }
   }
@@ -148,15 +173,17 @@ model.to.ram<-function(a.model){
   return(ram)	
 }
 
+
+
 ###example
-#a.model<-'y~x+z
-#		  x~3*z
-#		  z=~a+b+c
-#		  y~~c
-#'
-#
-#cat(a.model)
-#model.to.ram(a.model)
+a.model<-'y~x+z
+		  x~3*z
+		  z=~a+b+c
+		  y~~c
+'
+
+cat(a.model)
+model.to.ram(a.model)
 
 
 ###
