@@ -133,10 +133,10 @@ model.to.ram<-function(a.model){
      	#see if this is a fixed parameter values
     	     if(op=="=~"){
  		   isFixed<-strsplit(y[q], '*', fixed=T)[[1]]
-		   if(length(isFixed)>1) y[q]<-isFixed[2]
+		   if(length(isFixed)>1) {y[q]<-isFixed[2]}
 		 }else{
 			isFixed<-strsplit(x[j], '*', fixed=T)[[1]]
-			if(length(isFixed)>1) x[j]<-isFixed[2]
+			if(length(isFixed)>1) {x[j]<-isFixed[2]}
 			}
      	
      	
@@ -175,15 +175,15 @@ model.to.ram<-function(a.model){
 
 
 
-###example
-a.model<-'y~x+z
-		  x~3*z
-		  z=~a+b+c
-		  y~~c
-'
-
-cat(a.model)
-model.to.ram(a.model)
+####example
+#a.model<-'y~x+z
+#		  x~3*z
+#		  z=~a+b+c
+#		  y~~c
+#'
+#
+#cat(a.model)
+#model.to.ram(a.model)
 
 
 ###
