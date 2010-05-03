@@ -1,3 +1,7 @@
+2010-05-02 JEB
+	- changed delta_matrix to accomodate parameter constraints
+2010-04-24 JEB
+	- fixed latent variable and fixed value bugs in model.to.ram
 2010-04-20 JEB
 	- added anova.adjchisq which uses the SB corrected ANOVA for nested model comparison
 	- now correct the forth moment by n instead of n-1 (suggestion from Yves Rosseel)

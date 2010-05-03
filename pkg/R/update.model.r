@@ -51,6 +51,7 @@ update.model<-function(old.model, changes){
 	#now, run through the old model, and change things as needed
 	old.model<-split.model(old.model)
 	newmodel<-""
+	changedlines<-vector()
 	for(i in 1:length(old.model)){
 	  #first, see if anything in the list matches
 	  newline<-old.model[i]
@@ -58,6 +59,7 @@ update.model<-function(old.model, changes){
 	  if(!is.na(op)){
 	  	a.formula<-clean.modline(old.model[i])
 	  	lookup<-changelist[[paste(response(a.formula), op, sep="")]]
+	  	changedlines<-c(changedlines, paste(response(a.formula), op, sep=""))
 	  	if(!is.null(lookup)){
 	  	  #OK, now, update the formula
 	  	  a.formula<-update(a.formula, paste(response(a.formula),"~", lookup, sep=""))
@@ -75,6 +77,16 @@ update.model<-function(old.model, changes){
 
 	  }
 	 newmodel<-paste(newmodel, newline, "\n", sep="") 
+	}
+	
+	#now see if there are any newlines for the new model
+	newEqns<-which(!(names(changelist) %in% changedlines))
+	if(length(newEqns>0)){
+		for(i in newEqns){
+		 newmodel<-paste(newmodel, names(changelist)[i], changelist[[i]], "\n", sep="") 
+			
+		}
+		
 	}
 	
   return(newmodel)

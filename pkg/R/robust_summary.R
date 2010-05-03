@@ -6,15 +6,18 @@ robust_summary<-function (sem.obj, adj.obj = NA, data.obj = NA, useFit = F, useG
     if (is.na(adj.obj[1])) {
         adj.obj <- sbchisq(sem.obj, data.obj, useFit = useFit, useGinv= useGinv)
     }
-    ses <- robust_se(sem.obj, adj.obj = adj.obj, useGinv=adj.obj$ginvFlag)
-    se <- rep(NA, length(ses))
-	index<-0
-	for (i in 1:length(sem.obj$ram[, 1])) {
-        if (sem.obj$ram[i, 4] > 0) {cat(rownames(sem.obj$ram[i]))
-        	   index<-index+1
-            se[index] <- ses[index]
-        }
-    }
+    se <- robust_se(sem.obj, adj.obj = adj.obj, useGinv=adj.obj$ginvFlag)
+    #se <- rep(NA, length(ses))
+
+	#deals with fixed parameters
+	#taken out with new delta matrix
+#	index<-0
+#	for (i in 1:length(sem.obj$ram[, 1])) {
+#        if (sem.obj$ram[i, 4] > 0) {cat(rownames(sem.obj$ram[i]))
+#        	   index<-index+1
+#            se[index] <- ses[index]
+#        }
+#    }
     
     z <- sem.obj$coef/se
     p <- 2 * (1 - pnorm(abs(z)))

@@ -25,9 +25,9 @@ distribution. This function is based on their SAS code provided in the paper.
 MacCallum et al. (1996) suggest three typical and meaningful tests:
 
  \describe{
-  \item{Test of close fit: rmsea.ha = 0.08, rmsea.h0 = 0.05}
-  \item{Test of not-close fit: rmsea.ha = 0.01, rmsea.h0 = 0.05}
-  \item{Test of exact fit: rmsea.ha = 0.05, rmsea.h0 = 0.00}
+  \item{1}{Test of close fit: rmsea.ha = 0.08, rmsea.h0 = 0.05}
+  \item{2}{Test of not-close fit: rmsea.ha = 0.01, rmsea.h0 = 0.05}
+  \item{3}{Test of exact fit: rmsea.ha = 0.05, rmsea.h0 = 0.00}
  }
 }
 

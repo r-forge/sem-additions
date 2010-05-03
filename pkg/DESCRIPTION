@@ -1,6 +1,6 @@
 Package: sem.additions
-Version: 0.1-10
-Date: 2010-04-20
+Version: 0.1-13
+Date: 2010-05-02
 Title: Additional Methods for Structural Equation Modelling
 Author: Jarrett Byrnes <byrnes@msi.ucsb.edu>
 Maintainer: Jarrett Byrnes <byrnes@msi.ucsb.edu>
